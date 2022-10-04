@@ -19,7 +19,7 @@ def bin_to_char(bin_rep) -> str:
         char_rep = int_rep.to_bytes((int_rep.bit_length() + 7) // 8, 'big').decode()
     except UnicodeDecodeError as e:
         print(f"ERROR decoding bin rep: {bin_rep}")
-    return char_rep
+    return char_rep if char_rep else None
 """
 Takes in a str and converts it to a list of 7 bit binary sequences
 """
@@ -34,3 +34,6 @@ def bin_to_str(bin_reps) -> str:
     for bin_rep in bin_reps:
         str_rep += bin_to_char(bin_rep)
     return str_rep
+
+print(char_to_bin("k"))
+print(char_to_bin("V"))

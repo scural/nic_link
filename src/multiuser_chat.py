@@ -4,16 +4,16 @@ import threading
 import sys
 # assumes all nics are flushed
 BIT_WIDTH = 0.1
-
+nic.flush()
 # port connections are put in as command line args
 ports = sys.argv[1:]
 # check for bad args 
-if len(ports) < :
+if len(ports) < 1:
     print("ERROR: Must specify multiple ports for args")
     exit(-1)
 
 for i in range(len(ports)):
-    if ports[i] == "null":
+    if ports[i] == "null": 
         ports[i] = None;  
     else:
         ports[i] = int(ports[i])  

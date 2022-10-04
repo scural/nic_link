@@ -49,7 +49,7 @@ def nic_recv_all_ports() -> str:
     reciever_4bit_representation[3] = str(pi.read(20))
     return "".join(reciever_4bit_representation) 
 """
-Reads bits at given port
+TODO probably should change this to not read from every port
 """
 def nic_recv_from_port(port) -> str:
     return nic_recv_all_ports()[port-1]
@@ -57,3 +57,4 @@ def nic_recv_from_port(port) -> str:
 # zeros out the ports
 def flush():
     nic_send("1111")
+    nic_send("0000")
